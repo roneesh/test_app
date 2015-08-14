@@ -3,13 +3,31 @@ html.no-js(lang='')
   head
     include ./partials/head.jade
   body
-    include ./partials/body_top.jade
-    h1 Apply for Doge Card now!
-    h2 Such credit. Wow.
-    ul
-        each fruit in fruits
-            li!= fruit
-    form
-        input(type='text', placeholder='name')
-        input(type='text', placeholder='address')
+    .container
+        include ./partials/header.jade
+        include ./partials/body_top.jade
+        h1 Apply for Doge Card now!
+        h2 Such credit. Wow.
+        form
+            input(type='text', name='name' placeholder='name')
+            select(name='dob_month')
+                option(value='-1') DOB Month
+                option(value='jan') JAN  
+                option(value='feb') FEB  
+                option(value='mar') MAR  
+                option(value='apr') APR
+                option(value='may') MAY
+                option(value='jun') JUN
+                option(value='jul') JUL
+                option(value='aug') AUG
+                option(value='sep') SEP
+                option(value='oct') OCT
+                option(value='nov') NOV
+                option(value='dec') DEC
+            input(type='text', name='dob_day', placeholder='DOB Day')
+            input(type='text', name='dob_year', placeholder='DOB Year')
+            input(type='text', name='address' placeholder='address')
+            input(type='text', name='annual_income' placeholder='annual income')
+            input(type='submit' value='such submit, wow!')
+    include ./partials/footer.jade
     include ./partials/body_bottom.jade

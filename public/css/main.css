@@ -56,8 +56,28 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/*setup for sticky footer*/
+html, body { height: 100%; }
+.container, footer {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.container { 
+    min-height: 100%; 
+    margin-bottom: -54px;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+}
+.container:after { content: ""; display: block; height: 54px;}
 
-
+/*header and footer*/
+header, footer {
+    width: 100%;
+    background-color: #eee;
+    overflow: auto; /* to avoid collapsing margins */
+}
+header { height: 100px; }
+footer { height: 54px; text-align: center; }
 
 
 

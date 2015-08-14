@@ -3,6 +3,9 @@ html.no-js(lang='')
   head
     include ./partials/head.jade
   body
-    include ./partials/body_top.jade
-    p Admin page
+    .container
+        include ./partials/header.jade
+        include ./partials/body_top.jade
+        p Admin page
+    include ./partials/footer.jade
     include ./partials/body_bottom.jade
