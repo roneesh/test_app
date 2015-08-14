@@ -6,6 +6,16 @@ html.no-js(lang='')
     .container
         include ./partials/header.jade
         include ./partials/body_top.jade
-        p Admin page
+        h2 Such Applications, many credit scores, so hip.
+        p= thanks
+        ul.applications
+            each application in applications
+                li.application
+                    =application.name 
+                    |  who is 
+                    =application.age 
+                    |  and is a 
+                    =application.profession
+                    |  wants to get a credit card. They can haz?
     include ./partials/footer.jade
     include ./partials/body_bottom.jade

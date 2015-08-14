@@ -81,6 +81,15 @@ footer { height: 54px; text-align: center; }
 
 
 
+/* Applications index */
+.applications { list-style-type: none; padding-left: 0;}
+.application {
+    margin: 10px 0;
+    padding: 15px;
+    height: 45px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+}
 
 
 

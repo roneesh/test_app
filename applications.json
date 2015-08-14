@@ -1,0 +1,26 @@
+[
+	{
+		"name":"roneesh vashisht", 
+		"age":"18",
+		"profession":"programmer",
+		"approved":false
+	},
+    {
+    	"name":"troy", 
+    	"age":"29",
+    	"profession":"server",
+    	"approved":false
+    },
+    {
+    	"name":"barlow", 
+    	"age":"38",
+    	"profession":"actor",
+    	"approved":false
+    },
+    {
+    	"name":"reed",
+    	"age":"99",
+    	"profession":"actor",
+    	"approved":false
+    }
+]
