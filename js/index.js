@@ -5,8 +5,9 @@ var express = require('express'),
 var fs = require('fs');
 
 
-// Express View Engine
-app.set('views', '.');
+// Express Setup
+app.use(express.static('.'));
+app.set('views', './views');
 app.set('view engine', 'jade');
 
 // Routes
@@ -16,7 +17,7 @@ app.get('/admin', admin);
 app.post('/submit-application', submitApplication);
 
 function home(request, response) {
-    response.render('index');
+    response.render('index', { fruits : ['banana', 'grapefruit', 'grapes'] } );
 }
 
 function statusCheck(request, response) {

@@ -1,0 +1,15 @@
+doctype html
+html.no-js(lang='')
+  head
+    include ./partials/head.jade
+  body
+    include ./partials/body_top.jade
+    h1 Apply for Doge Card now!
+    h2 Such credit. Wow.
+    ul
+        each fruit in fruits
+            li!= fruit
+    form
+        input(type='text', placeholder='name')
+        input(type='text', placeholder='address')
+    include ./partials/body_bottom.jade
