@@ -2,7 +2,8 @@ var express = require('express'),
 	app = express(),
     server = app.listen(3000, developmentStartup),
     bodyParser = require('body-parser'),
-    fs = require('fs');
+    fs = require('fs'),
+    _ = require('underscore');
 
 // Express Setup
 app.use(express.static('public'));
@@ -48,19 +49,15 @@ function developmentStartup() {
 }
 
 // "DATABASE" of applications via JSON file
+
+function readDB() {
+	return JSON.parse(fs.readFileSync('applications.json', {encoding: 'utf8'}));
+}
+
 function getApplications() {
-	var applications = JSON.parse(fs.readFileSync('applications.json', {encoding: 'utf8'}));
-	return applications;
+	return readDB();
 }
 
 function getApplication(application_id) {
-	var application,
-		applications = JSON.parse(fs.readFileSync('applications.json', {encoding: 'utf8'}));
-
-	applications.forEach(function(element, index, array) {
-		if (element['application_id'] === application_id) {
-			application = element
-		}
-	});
-	return application;
+	return _.where(readDB(), {'application_id' : application_id})[0];
 }
