@@ -49,7 +49,6 @@ function developmentStartup() {
 }
 
 // "DATABASE" of applications via JSON file
-
 function readDB() {
 	return JSON.parse(fs.readFileSync('applications.json', {encoding: 'utf8'}));
 }
@@ -59,5 +58,5 @@ function getApplications() {
 }
 
 function getApplication(application_id) {
-	return _.where(readDB(), {'application_id' : application_id})[0];
+	return _.findWhere(readDB(), {'application_id' : application_id});
 }
