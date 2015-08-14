@@ -4,7 +4,7 @@
 
 1. Run 'npm install'
 2. Run 'npm start' to start the app
-3. Change the port number in js/index.js
+3. Change the port number in js/index.js if you're already using 3000.
 
 ## Architecture
 
