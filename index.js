@@ -1,24 +1,8 @@
 var express = require('express'),
 	app = express(),
     server = app.listen(3000, developmentStartup),
-    bodyParser = require('body-parser');
-
-var fs = require('fs'),
-	applications = [];
-
-// "Database" of applications
-fs.readFile('applications.json', {encoding: 'utf8'}, readApplicationsToArray);
-
-function readApplicationsToArray(error, data) {
-	if (error) {
-		throw error;
-	}
-
-	JSON.parse(data).forEach(function(application) {
-		applications.push(application);
-	});
-}
-
+    bodyParser = require('body-parser'),
+    fs = require('fs');
 
 // Express Setup
 app.use(express.static('public'));
@@ -39,16 +23,16 @@ function newApplication(request, response) {
 }
 
 function showApplication(request, response) {
-	response.send('now viewing application: ' + request.params.id);
+	var application = getApplication(request.params.id);
+	response.render('show', {application: application});
 }
 
 function indexApplication(request, response) {
+    var applications = getApplications();
     response.render('index', {applications: applications});
 }
 
 function createApplication(request, response) {
-	console.log('POST applications hit')
-	console.log(request.body)
 	var new_application = {
 		'name' 		 : request.body.name,
 		'age'  		 : request.body.age,
@@ -61,4 +45,22 @@ function createApplication(request, response) {
 // Development Server Startup
 function developmentStartup() {
     console.log('Server is running on port ' + server.address().port);
+}
+
+// "DATABASE" of applications via JSON file
+function getApplications() {
+	var applications = JSON.parse(fs.readFileSync('applications.json', {encoding: 'utf8'}));
+	return applications;
+}
+
+function getApplication(application_id) {
+	var application,
+		applications = JSON.parse(fs.readFileSync('applications.json', {encoding: 'utf8'}));
+
+	applications.forEach(function(element, index, array) {
+		if (element['application_id'] === application_id) {
+			application = element
+		}
+	});
+	return application;
 }

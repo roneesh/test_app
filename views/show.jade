@@ -1,0 +1,19 @@
+doctype html
+html.no-js(lang='')
+  head
+    include ./partials/head.jade
+  body
+    .container
+        include ./partials/header.jade
+        include ./partials/body_top.jade
+        h2 Such Application, this one wow...
+        p What you did.
+        ul
+            li= application['application_id']
+            li= application.name
+            li= application.age
+            li= application.profession
+            li= application.approved
+            li= application.evaluated
+    include ./partials/footer.jade
+    include ./partials/body_bottom.jade

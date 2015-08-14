@@ -1,26 +1,42 @@
 [
 	{
+		"application_id" : "1",
 		"name":"roneesh vashisht", 
 		"age":"18",
 		"profession":"programmer",
-		"approved":false
+		"approved":false,
+		"evaluated":false
 	},
     {
+    	"application_id" : "2",
     	"name":"troy", 
     	"age":"29",
     	"profession":"server",
-    	"approved":false
+    	"approved":false,
+		"evaluated":false
     },
     {
+    	"application_id" : "3",
     	"name":"barlow", 
     	"age":"38",
     	"profession":"actor",
-    	"approved":false
+    	"approved":false,
+		"evaluated":false
     },
     {
+    	"application_id" : "4",
     	"name":"reed",
     	"age":"99",
     	"profession":"actor",
-    	"approved":false
+    	"approved":false,
+		"evaluated":false
+    },
+    {
+    	"application_id" : "5",
+    	"name":"gothee",
+    	"age":"100",
+    	"profession":"burner",
+    	"approved":false,
+		"evaluated":false
     }
 ]
