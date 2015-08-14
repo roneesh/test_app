@@ -12,20 +12,21 @@ app.set('view engine', 'jade');
 
 // Routes
 app.get('/', home);
-app.get('/application-status/:application_id', statusCheck);
-app.get('/admin', admin);
-app.post('/submit-application', submitApplication);
+app.get('/applications/new', home);
+app.get('/applications/:id', statusCheck);
+app.get('/applications', admin);
+app.post('/applications', submitApplication);
 
 function home(request, response) {
     response.render('index', { fruits : ['banana', 'grapefruit', 'grapes'] } );
 }
 
 function statusCheck(request, response) {
-
+	response.send('now viewing application: ' + request.params.id);
 }
 
 function admin(request, response) {
-    response.render('admin')
+    response.render('applications')
 }
 
 function submitApplication(request, response) {
