@@ -3,7 +3,8 @@ var express = require('express'),
     server = app.listen(3000, developmentStartup),
     bodyParser = require('body-parser'),
     fs = require('fs'),
-    _ = require('underscore');
+    _ = require('underscore'),
+    DB_FILE_NAME = 'applications.json';
 
 
 // *************
@@ -104,7 +105,7 @@ function recordIsValid(application) {
 }
 
 function readDB() {
-	return JSON.parse(fs.readFileSync('applications2.json', {encoding: 'utf8'}));
+	return JSON.parse(fs.readFileSync(DB_FILE_NAME, {encoding: 'utf8'}));
 }
 
 function getApplications() {
@@ -118,7 +119,7 @@ function getApplication(application_id) {
 function createApplicationRecord(new_record) {
 	var existing_db = readDB();
 	existing_db.push(new_record);
-	return fs.writeFileSync('applications2.json', JSON.stringify(existing_db, null, 4));
+	return fs.writeFileSync(DB_FILE_NAME, JSON.stringify(existing_db, null, 4));
 }
 
 function updateApplicationRecord(updated_existing_record) {
@@ -128,7 +129,7 @@ function updateApplicationRecord(updated_existing_record) {
 			_.extend(record, updated_existing_record);
 		}
 	});
-	return fs.writeFileSync('applications2.json', JSON.stringify(existing_db, null, 4));
+	return fs.writeFileSync(DB_FILE_NAME, JSON.stringify(existing_db, null, 4));
 }
 
 
