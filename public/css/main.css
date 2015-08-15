@@ -95,7 +95,6 @@ footer { height: 54px; text-align: center; z-index: 2; }
 .application {
     margin: 10px 0;
     padding: 15px;
-    height: 45px;
     background-color: #ddd;
     border: 1px solid #ccc;
     overflow: auto;
@@ -147,10 +146,6 @@ footer { height: 54px; text-align: center; z-index: 2; }
     padding: 5px;
     margin: 15px;
     border-radius: 5px;
-}
-
-.lookup-form input {
-    margin: 15px;   
 }
 
 
