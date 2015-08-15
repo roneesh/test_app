@@ -11,8 +11,8 @@ html.no-js(lang='')
         if apply_message
             .alert= apply_message
         form(method='post', action='/applications', class='application-form')
-            input(type='text', name='name' placeholder='name', required='true', pattern='^[a-zA-Z][a-zA-Z\s]{2,20}')
-            input(type='text', name='age', placeholder='age', required='true', pattern='^[1-9][0-9]$')
+            input(type='text', name='name' placeholder='name', required='true', pattern='^[a-zA-Z]([a-zA-Z ]+)$')
+            input(type='text', name='age', placeholder='age', required='true', pattern='^([1-9][0-9])[0-9]?$')
             input(type='text', name='profession', placeholder='profession', required='true', pattern='^[a-zA-Z][a-zA-Z\s]{2,50}')
             input(type='submit' value='such submit, wow!')
 

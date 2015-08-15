@@ -78,5 +78,13 @@
         "application_id": "84941237",
         "application_reviewed": true,
         "application_approved": true
+    },
+    {
+        "name": "doctorBad",
+        "age": "99",
+        "profession": "doctor",
+        "application_id": "61420612",
+        "application_reviewed": true,
+        "application_approved": true
     }
 ]
