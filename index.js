@@ -31,15 +31,38 @@ function newApplication(request, response) {
     response.render('new', { fruits : ['banana', 'grapefruit', 'grapes'] } );
 }
 
+function indexApplication(request, response) {
+    var applications = getApplications();
+    response.render('index', {applications: applications});
+}
+
 function showApplication(request, response) {
 	var app_id = request.params.id,
 		application = getApplication(app_id);
 	response.render('show', {application: application});
 }
 
-function indexApplication(request, response) {
-    var applications = getApplications();
-    response.render('index', {applications: applications});
+function editApplication(request, response) {
+	var app_id = request.params.id,
+		new_status = request.query.status,
+		existing_application = getApplication(app_id);
+
+	if (existing_application && (new_status === 'approve')) {
+		_.extend(existing_application, {
+			'application_reviewed' : true,
+			'application_approved' : true
+		})
+		updateApplicationRecord(existing_application);
+
+	} else if (existing_application && (new_status === 'reject')) {
+		_.extend(existing_application, {
+			'application_reviewed' : true,
+			'application_approved' : false
+		})
+		updateApplicationRecord(existing_application);
+	}
+
+	response.redirect('back');
 }
 
 function createApplication(request, response) {
@@ -66,28 +89,6 @@ function lookupApplication(request, response) {
 	}
 }
 
-function editApplication(request, response) {
-	var app_id = request.params.id,
-		new_status = request.query.status,
-		existing_application = getApplication(app_id);
-
-	if (existing_application && (new_status === 'approve')) {
-		_.extend(existing_application, {
-			'application_reviewed' : true,
-			'application_approved' : true
-		})
-		updateApplicationRecord(existing_application);
-
-	} else if (existing_application && (new_status === 'reject')) {
-		_.extend(existing_application, {
-			'application_reviewed' : true,
-			'application_approved' : false
-		})
-		updateApplicationRecord(existing_application);
-	}
-
-	response.redirect('back');
-}
 
 // ****************************************
 // "Database" of applications via JSON file
@@ -110,6 +111,18 @@ function getApplication(application_id) {
 	return _.findWhere(readDB(), {'application_id' : application_id});
 }
 
+function updateApplicationRecord(updated_existing_record) {
+	var existing_db = readDB();
+
+	existing_db.forEach(function(record) {
+		if (record.application_id === updated_existing_record.application_id) {
+			_.extend(record, updated_existing_record);
+		}
+	});
+
+	return fs.writeFileSync(DB_FILE_NAME, JSON.stringify(existing_db, null, 4));
+}
+
 function createApplicationRecord(new_record) {
 	var existing_db = readDB();
 
@@ -125,18 +138,6 @@ function createApplicationRecord(new_record) {
 	} else {
 		return false;
 	}
-}
-
-function updateApplicationRecord(updated_existing_record) {
-	var existing_db = readDB();
-
-	existing_db.forEach(function(record) {
-		if (record.application_id === updated_existing_record.application_id) {
-			_.extend(record, updated_existing_record);
-		}
-	});
-
-	return fs.writeFileSync(DB_FILE_NAME, JSON.stringify(existing_db, null, 4));
 }
 
 
