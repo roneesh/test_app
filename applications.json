@@ -86,5 +86,13 @@
         "application_id": "61420612",
         "application_reviewed": true,
         "application_approved": true
+    },
+    {
+        "name": "refactor",
+        "age": "12",
+        "profession": "refactor",
+        "application_id": "70014702",
+        "application_reviewed": false,
+        "application_approved": false
     }
 ]

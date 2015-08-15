@@ -49,17 +49,23 @@ function createApplication(request, response) {
 		'profession'  : request.body.profession,
 	}
 
-	if (recordIsValid(new_application)) {
-		_.extend(new_application, {
-			'application_id' 	   : Math.floor(Math.random()*99999999).toString(),
-			'application_reviewed' : false,
-			'application_approved' : false
-		})
-		createApplicationRecord(new_application);
+	if (createApplicationRecord(new_application)) {
 		response.render('show', {application: new_application, thanks: 'THANKZ'});
 	} else {
 		response.render('new', { apply_message: 'We are sorry, but your application could not be saved at this time, please try again.'})
 	}
+
+	// if (recordIsValid(new_application)) {
+	// 	_.extend(new_application, {
+	// 		'application_id' 	   : Math.floor(Math.random()*99999999).toString(),
+	// 		'application_reviewed' : false,
+	// 		'application_approved' : false
+	// 	})
+	// 	createApplicationRecord(new_application);
+	// 	response.render('show', {application: new_application, thanks: 'THANKZ'});
+	// } else {
+	// 	response.render('new', { apply_message: 'We are sorry, but your application could not be saved at this time, please try again.'})
+	// }
 }
 
 function lookupApplication(request, response) {
@@ -118,17 +124,30 @@ function getApplication(application_id) {
 
 function createApplicationRecord(new_record) {
 	var existing_db = readDB();
-	existing_db.push(new_record);
-	return fs.writeFileSync(DB_FILE_NAME, JSON.stringify(existing_db, null, 4));
+
+	if (recordIsValid(new_record)) {
+		_.extend(new_record, {
+			'application_id' 	   : Math.floor(Math.random()*99999999).toString(),
+			'application_reviewed' : false,
+			'application_approved' : false
+		})
+		existing_db.push(new_record);
+		fs.writeFileSync(DB_FILE_NAME, JSON.stringify(existing_db, null, 4));
+		return true;
+	} else {
+		return false;
+	}
 }
 
 function updateApplicationRecord(updated_existing_record) {
-	var existing_db = readDB(); // get entire DB
+	var existing_db = readDB();
+
 	existing_db.forEach(function(record) {
 		if (record.application_id === updated_existing_record.application_id) {
 			_.extend(record, updated_existing_record);
 		}
 	});
+
 	return fs.writeFileSync(DB_FILE_NAME, JSON.stringify(existing_db, null, 4));
 }
 
