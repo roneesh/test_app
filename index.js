@@ -18,17 +18,21 @@ app.set('view engine', 'jade');
 // ******
 // Routes
 app.get('/', newApplication);
+app.get('/applications', indexApplication);
 app.get('/applications/new', newApplication);
 app.get('/applications/:id', showApplication);
-app.get('/applications', indexApplication);
+app.get('/applications/:id/edit', editApplication);
 app.post('/applications', createApplication);
+app.post('/applications/lookup', lookupApplication);
+
 
 function newApplication(request, response) {
     response.render('new', { fruits : ['banana', 'grapefruit', 'grapes'] } );
 }
 
 function showApplication(request, response) {
-	var application = getApplication(request.params.id);
+	var app_id = request.params.id,
+		application = getApplication(app_id);
 	response.render('show', {application: application});
 }
 
@@ -46,17 +50,49 @@ function createApplication(request, response) {
 
 	if (recordIsValid(new_application)) {
 		_.extend(new_application, {
-			'application_id' 	   : new Date(),
+			'application_id' 	   : Math.floor(Math.random()*99999999).toString(),
 			'application_reviewed' : false,
 			'application_approved' : false
 		})
 		createApplicationRecord(new_application);
-		response.render('index', {applications: readDB(), thanks: 'THANKZ'});
+		response.render('show', {application: new_application, thanks: 'THANKZ'});
 	} else {
-		response.render('index', {applications: readDB(), message: 'We are sorry, but your application could not be saved at this time, please try again.'})
+		response.render('new', { apply_message: 'We are sorry, but your application could not be saved at this time, please try again.'})
 	}
 }
 
+function lookupApplication(request, response) {
+	var app_id = request.body.id,
+		application = getApplication(app_id);
+	if (application) {
+		response.render('show', {application: application});
+	} else {
+		response.render('new', { lookup_message : "We no haz that application! Please try again!"})
+	}
+}
+
+function editApplication(request, response) {
+	var app_id = request.params.id,
+		new_status = request.query.status,
+		existing_application = getApplication(app_id);
+
+	if (existing_application && (new_status === 'approve')) {
+		_.extend(existing_application, {
+			'application_reviewed' : true,
+			'application_approved' : true
+		})
+		updateApplicationRecord(existing_application);
+
+	} else if (existing_application && (new_status === 'reject')) {
+		_.extend(existing_application, {
+			'application_reviewed' : true,
+			'application_approved' : false
+		})
+		updateApplicationRecord(existing_application);
+	}
+
+	response.redirect('back');
+}
 
 // ****************************************
 // "Database" of applications via JSON file
@@ -82,6 +118,16 @@ function getApplication(application_id) {
 function createApplicationRecord(new_record) {
 	var existing_db = readDB();
 	existing_db.push(new_record);
+	return fs.writeFileSync('applications2.json', JSON.stringify(existing_db, null, 4));
+}
+
+function updateApplicationRecord(updated_existing_record) {
+	var existing_db = readDB(); // get entire DB
+	existing_db.forEach(function(record) {
+		if (record.application_id === updated_existing_record.application_id) {
+			_.extend(record, updated_existing_record);
+		}
+	});
 	return fs.writeFileSync('applications2.json', JSON.stringify(existing_db, null, 4));
 }
 

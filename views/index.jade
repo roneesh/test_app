@@ -11,12 +11,31 @@ html.no-js(lang='')
         ul.applications
             each application in applications
                 li.application
-                    =application.name 
-                    |  who is 
-                    =application.age 
-                    |  and is a 
-                    =application.profession
-                    |  wants to get a credit card. They can haz?
-                    =application.application_id
+                    .details
+                        =application.name 
+                        |  who is 
+                        =application.age 
+                        |  and is a 
+                        =application.profession
+                        |  wants to get a credit card. They can haz?
+                        if application.application_reviewed && application.application_approved
+                            br
+                            p Currently application is approved!
+                        else if application.application_reviewed && !application.application_approved
+                            br
+                            p Currentlly application is rejected!
+                        else if !application.application_reviewed
+                            br
+                            p Currently application has not been reviewed!
+                    .actions
+                        a(href="/applications/#{application.application_id}/edit?status=approve")
+                            button Approve!
+                        a(href="/applications/#{application.application_id}/edit?status=reject")
+                            button Reject...
+                        a(href="/applications/#{application.application_id}") View page
+                        form(action="/applications/#{application.application_id" method="DELETE")
+                            input(type="submit" value="Delete Application")
+
+
     include ./partials/footer.jade
     include ./partials/body_bottom.jade

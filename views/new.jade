@@ -3,15 +3,28 @@ html.no-js(lang='')
   head
     include ./partials/head.jade
   body
-    .container
+    .container.new-application
         include ./partials/header.jade
         include ./partials/body_top.jade
         h1 Apply for Doge Card now!
         h2 Such credit. Wow.
-        form(method='post', action='/applications')
-            input(type='text', name='name' placeholder='name', required='true', pattern="^[a-zA-Z][a-zA-Z\s]{2,20}")
+        if apply_message
+            .alert= apply_message
+        form(method='post', action='/applications', class='application-form')
+            input(type='text', name='name' placeholder='name', required='true', pattern='^[a-zA-Z][a-zA-Z\s]{2,20}')
             input(type='text', name='age', placeholder='age', required='true', pattern='^[1-9][0-9]$')
-            input(type='text', name='profession', placeholder='profession', required='true', pattern="^[a-zA-Z][a-zA-Z\s]{2,50}")
+            input(type='text', name='profession', placeholder='profession', required='true', pattern='^[a-zA-Z][a-zA-Z\s]{2,50}')
             input(type='submit' value='such submit, wow!')
+
+        form(class="lookup-form" action="/applications/lookup", method='POST')
+            if lookup_message
+                label.alert= lookup_message
+            else
+                label Much applied already? Put in application id to see status! 
+            input(type='text', name='id', placeholder='8-digit number', pattern='[0-9]{8,8}')
+            input(type='submit', value='Many lookups')
+        .dogeism.many-credit many credit
+        .dogeism.such-finance such finance
+        .dogeism.wow-apply wow apply
     include ./partials/footer.jade
     include ./partials/body_bottom.jade

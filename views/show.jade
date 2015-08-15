@@ -7,13 +7,18 @@ html.no-js(lang='')
         include ./partials/header.jade
         include ./partials/body_top.jade
         h2 Such Application, this one wow...
-        p What you did.
+        p What you said when you applied!
         ul
-            li= application['application_id']
-            li= application.name
-            li= application.age
-            li= application.profession
-            li= application.approved
-            li= application.evaluated
+            li Your application_id: #{ application['application_id'] } (save this!)
+            li Your name: #{ application.name }
+            li Your age: #{ application.age }
+            li Your profession: #{ application.profession }
+        if application.application_reviewed && application.application_approved
+            .alert.success Your application has been evaluated and you have been approved! Yay! Expect your doge card shortly
+        else if application.application_reviewed && !application.application_approved
+            .alert.error Your application has been reviewed and unfortunately we no can offer credit at this time!
+        else if !application.application_reviewed && !application.application_approved
+            .alert.notification We're evaluating your application, a trained Doge specialist will let you know ASAP!
+        a(href='/applications/new') Back to Application
     include ./partials/footer.jade
     include ./partials/body_bottom.jade
