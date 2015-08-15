@@ -1,6 +1,6 @@
 [
 	{
-		"application_id" : "1",
+		"application_id" : 1,
 		"name" : "Roneesh",
 		"age"  : "18",
 		"profession" : "programmer",
@@ -8,7 +8,7 @@
 		"application_approved" : false
 	},
 	{
-		"application_id" : "2",
+		"application_id" : 2,
 		"name" : "Greg",
 		"age"  : "21",
 		"profession" : "burner",
@@ -16,7 +16,7 @@
 		"application_approved" : false
 	},
 	{
-		"application_id" : "3",
+		"application_id" : 3,
 		"name" : "sticko",
 		"age"  : "5",
 		"profession" : "suzzler",
@@ -24,7 +24,7 @@
 		"application_approved" : false
 	},
 	{
-		"application_id" : "4",
+		"application_id" : 4,
 		"name" : "bonto",
 		"age"  : "145",
 		"profession" : "wexler",
@@ -32,7 +32,7 @@
 		"application_approved" : false
 	},
 	{
-		"application_id" : "5",
+		"application_id" : 5,
 		"name" : "Eddie Lamptert",
 		"age"  : "37",
 		"profession" : "idiot",
