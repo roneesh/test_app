@@ -60,3 +60,11 @@ function getApplications() {
 function getApplication(application_id) {
 	return _.findWhere(readDB(), {'application_id' : application_id});
 }
+
+function createApplicationRecord(new_record) {
+	var existing_db = readDB();
+	existing_db.push(new_record);
+	// return fs.writeFileSync('applications.json', existing_db);
+}
+
+createApplicationRecord({'test_record':'test_value'});

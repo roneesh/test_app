@@ -1,42 +1,42 @@
 [
 	{
 		"application_id" : "1",
-		"name":"roneesh vashisht", 
-		"age":"18",
-		"profession":"programmer",
-		"approved":false,
-		"evaluated":false
+		"name" : "Roneesh",
+		"age"  : "18",
+		"profession" : "programmer",
+		"application_reviewed" : false,
+		"application_approved" : false
 	},
-    {
-    	"application_id" : "2",
-    	"name":"troy", 
-    	"age":"29",
-    	"profession":"server",
-    	"approved":false,
-		"evaluated":false
-    },
-    {
-    	"application_id" : "3",
-    	"name":"barlow", 
-    	"age":"38",
-    	"profession":"actor",
-    	"approved":false,
-		"evaluated":false
-    },
-    {
-    	"application_id" : "4",
-    	"name":"reed",
-    	"age":"99",
-    	"profession":"actor",
-    	"approved":false,
-		"evaluated":false
-    },
-    {
-    	"application_id" : "5",
-    	"name":"gothee",
-    	"age":"100",
-    	"profession":"burner",
-    	"approved":false,
-		"evaluated":false
-    }
+	{
+		"application_id" : "2",
+		"name" : "Greg",
+		"age"  : "21",
+		"profession" : "burner",
+		"application_reviewed" : false,
+		"application_approved" : false
+	},
+	{
+		"application_id" : "3",
+		"name" : "sticko",
+		"age"  : "5",
+		"profession" : "suzzler",
+		"application_reviewed" : false,
+		"application_approved" : false
+	},
+	{
+		"application_id" : "4",
+		"name" : "bonto",
+		"age"  : "145",
+		"profession" : "wexler",
+		"application_reviewed" : false,
+		"application_approved" : false
+	},
+	{
+		"application_id" : "5",
+		"name" : "Eddie Lamptert",
+		"age"  : "37",
+		"profession" : "idiot",
+		"application_reviewed" : false,
+		"application_approved" : false
+	}
 ]
