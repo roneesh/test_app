@@ -54,18 +54,6 @@ function createApplication(request, response) {
 	} else {
 		response.render('new', { apply_message: 'We are sorry, but your application could not be saved at this time, please try again.'})
 	}
-
-	// if (recordIsValid(new_application)) {
-	// 	_.extend(new_application, {
-	// 		'application_id' 	   : Math.floor(Math.random()*99999999).toString(),
-	// 		'application_reviewed' : false,
-	// 		'application_approved' : false
-	// 	})
-	// 	createApplicationRecord(new_application);
-	// 	response.render('show', {application: new_application, thanks: 'THANKZ'});
-	// } else {
-	// 	response.render('new', { apply_message: 'We are sorry, but your application could not be saved at this time, please try again.'})
-	// }
 }
 
 function lookupApplication(request, response) {
