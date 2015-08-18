@@ -2,9 +2,9 @@
 
 ### Installation
 
-1. Run 'npm install'
+1. Run 'npm install', this will install all the npm packages used on your system
 2. Run 'npm start' to start the app
-3. Change the PORT variable in index.js if you're already using port 3000.
+3. Change the PORT variable in index.js if you're already using port 3000
 
 ### Code Reviewing This App
 
