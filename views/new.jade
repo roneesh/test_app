@@ -16,9 +16,9 @@ html.no-js(lang='')
                     if apply_message
                         .alert= apply_message
                     form(method='post', action='/applications', class='application-form')
-                        input(type='text', name='name' placeholder='name', required='true', pattern='^[a-zA-Z]([a-zA-Z ]+)$')
-                        input(type='text', name='age', placeholder='age', required='true', pattern='^([1-9][0-9])[0-9]?$')
-                        input(type='text', name='profession', placeholder='profession', required='true', pattern='^[a-zA-Z][a-zA-Z\s]{2,50}')
+                        input(type='text', name='name' placeholder='name', required='true', title="first and last name" pattern='^[a-zA-Z]([a-zA-Z ]+)$')
+                        input(type='text', name='age', placeholder='age', required='true', title="age" pattern='^([1-9][0-9])[0-9]?$')
+                        input(type='text', name='profession', placeholder='profession', required='true', title="profession" pattern='^[a-zA-Z][a-zA-Z ]{2,50}')
                         input(type='submit' value='such submit, wow!')
 
                     form(class="lookup-form" action="/applications/lookup", method='POST')
@@ -34,15 +34,15 @@ html.no-js(lang='')
                 .col-2-3
                     h2 Why Doge Card?
                     .col-1-3
-                        img(src='../img/dogeFeature1.jpeg')
+                        img(src='../img/dogeFeature1.jpeg' alt="dog looking cute")
                         em Doge Card is fluffy with amaze credit. 
                         p Many spends are available to you in all fields of spendosity! You can spend on food (Doge food ideally!), or maybe such gasoline for automobile! Some spend on fun stuffs, some only serious things.
                     .col-1-3
-                        img(src='../img/dogeFeature2.png')
+                        img(src='../img/dogeFeature2.png' alt="dog looking cool")
                         em Doge Card is cool excellence in finance.
                         p Many spends are available to you in all fields of spendosity! You can spend on food (Doge food ideally!), or maybe such gasoline for automobile! Some people use their Doge Card for spending on fun stuffs.
                     .col-1-3
-                        img(src='/../img/dogeFeature3.jpg')
+                        img(src='/../img/dogeFeature3.jpg' alt="dog looking like lion")
                         em Doge Card is lions roar of fire awesome.
                         p Doge Card is Chuck Norris. We repeat: Doge Card is Chuck Norris. Doge Card is such fierce spend of fire that you might need gloves! Doge card has a -2.9% interest rate! Yes Negative!
     include ./partials/footer.jade

@@ -5,7 +5,7 @@
         "profession": "Programmer",
         "application_id": "93618396",
         "application_reviewed": true,
-        "application_approved": false
+        "application_approved": true
     },
     {
         "name": "Michael G.",
@@ -45,6 +45,6 @@
         "profession": "President",
         "application_id": "1302428",
         "application_reviewed": true,
-        "application_approved": true
+        "application_approved": false
     }
 ]
