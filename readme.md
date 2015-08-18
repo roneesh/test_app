@@ -16,7 +16,7 @@ main.js is a file enabling simple client side form validation using jQuery.
 
 Views are in the ./views folder, the main views are new.jade for the main page, show.jade for the single application status page and index.jade for the 'admin' page where you can approve or deny applications.
 
-CSS is in teh ./public/css folder. The main file is main.scss which compiles to main.css, and then the import files into main.scss that are in ./public/css/styles.
+CSS is in the ./public/css folder. The main file is main.scss which compiles to main.css, and then the import files into main.scss that are in ./public/css/styles.
 
 ## Architecture
 
@@ -44,7 +44,7 @@ I also aim to just use one class per dom element, with on occasion having two cl
 
 With Javascript I try and follow some general best practices as much as possible:
 
-1. Avoid anonymous functions, try and use named functions
+1. Avoid anonymous functions and try to use named functions
 2. Keep functions to less than 5 lines (per Sandi Metz's rules)
 3. Have functions return something explicit
 4. Utilize returning of booleans in functions
