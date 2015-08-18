@@ -54,6 +54,10 @@ With Javascript I try and follow some general best practices as much as possible
 
 I am aware I could use the 'new' syntax to create application objects, however in this case it seems like too complex a solution, so I stuck with just creating a basic application object.
 
+## Data Validations
+
+As a first line of client side defense I use HTML5's pattern attribute. I try and use commonly accepted regexes for fields like e-mail and phone and names, but in this app I wrote my own (hopefully this demonstrates I can write regex if needed!). There is jQuery validation implemented in main.js, and then the server does some validation in index.js. So in tota the app has 3 measures of validation security in it. 
+
 ## HTML
 
 I try and keep markup clean and use semantic elements such as footer, nav, section, etc when reasonable. 
