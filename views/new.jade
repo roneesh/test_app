@@ -16,9 +16,9 @@ html.no-js(lang='')
                     if apply_message
                         .alert= apply_message
                     form(method='post', action='/applications', class='application-form')
-                        input(type='text', name='name' placeholder='name', required='true', title="first and last name" pattern='^[a-zA-Z]([a-zA-Z ]+)$')
-                        input(type='text', name='age', placeholder='age', required='true', title="age" pattern='^([1-9][0-9])[0-9]?$')
-                        input(type='text', name='profession', placeholder='profession', required='true', title="profession" pattern='^[a-zA-Z][a-zA-Z ]{2,50}')
+                        input(type='text', data-validation="alpha" name='name' placeholder='name', required='true', title="first and last name" )
+                        input(type='text', data-validation="numeric" name='age', placeholder='age', required='true', title="age")
+                        input(type='text', data-validation="alpha" name='profession', placeholder='profession', required='true', title="profession" pattern='^[a-zA-Z][a-zA-Z ]{2,50}')
                         input(type='submit' value='such submit, wow!')
 
                     form(class="lookup-form" action="/applications/lookup", method='POST')

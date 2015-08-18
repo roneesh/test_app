@@ -67,16 +67,33 @@ function editApplication(request, response) {
 }
 
 function createApplication(request, response) {
+	console.log('xhr request: ' + request.xhr);
 	var new_application = {
 		'name' 		  : request.body.name,
 		'age'  		  : request.body.age,
 		'profession'  : request.body.profession,
 	}
 
+	if (recordIsValid(new_application)) {
+		_.extend(new_application, {
+			'application_id' 	   : Math.floor(Math.random()*99999999).toString(),
+			'application_reviewed' : false,
+			'application_approved' : false
+		})
+	}
+
 	if (createApplicationRecord(new_application)) {
-		response.render('show', {application: new_application, thanks: 'THANKZ'});
+		if (request.xhr) {
+			response.json({ application_id: new_application.application_id });
+		} else {
+			response.render('show', {application: new_application, thanks: 'THANKZ'});
+		}
 	} else {
-		response.render('new', { apply_message: 'We are sorry, but your application could not be saved at this time, please try again.'})
+		if (request.xhr) {
+			response.json({ });
+		} else {
+			response.render('new', { apply_message: 'We are sorry, but your application could not be saved at this time, please try again.'});
+		}
 	}
 }
 
@@ -126,19 +143,9 @@ function updateApplicationRecord(updated_existing_record) {
 
 function createApplicationRecord(new_record) {
 	var existing_db = readDB();
-
-	if (recordIsValid(new_record)) {
-		_.extend(new_record, {
-			'application_id' 	   : Math.floor(Math.random()*99999999).toString(),
-			'application_reviewed' : false,
-			'application_approved' : false
-		})
-		existing_db.push(new_record);
-		fs.writeFileSync(DB_FILE_NAME, JSON.stringify(existing_db, null, 4));
-		return true;
-	} else {
-		return false;
-	}
+	existing_db.push(new_record);
+	fs.writeFileSync(DB_FILE_NAME, JSON.stringify(existing_db, null, 4));
+	return true; //looking for a good way to hook into the response of if the file write is successful
 }
 
 

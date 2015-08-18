@@ -15,6 +15,10 @@
     border-color: #BCE2F4;
     background-color: #E1EFF6; }
 
+.failed-validation {
+  border: 2px solid red;
+  color: red; }
+
 .back-btn {
   float: none;
   border: 4px solid;
