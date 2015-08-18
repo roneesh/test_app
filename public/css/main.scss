@@ -1,0 +1,73 @@
+@import 'styles/variables';
+@import 'styles/alerts';
+@import 'styles/buttons';
+@import 'styles/forms';
+@import 'styles/grids';
+@import 'styles/lists';
+@import 'styles/header_and_footer';
+
+
+/*setup for global includes and all pages*/
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+html, body { 
+    height: 100%; 
+    color: #333;
+    min-width: 400px;
+    min-width: 767px;
+    font-family: 'Comic Sans MS', 'Times New Roman', 'Serif';
+}
+a {
+	color: #333;
+	text-decoration: none;
+	&:visited {
+		color: #333;
+	}
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.container { 
+    min-height: 100%; 
+    margin-bottom: -54px;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    @extend .clearfix;
+}
+.container:after { 
+	content: ""; 
+	display: block; 
+	height: 54px;
+}
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+/* New Application*/
+
+
+
+
+
+

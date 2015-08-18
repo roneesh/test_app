@@ -13,6 +13,7 @@
     "express": "^4.13.3",
     "handlebars": "^3.0.3",
     "jade": "^1.11.0",
+    "nodemon": "^1.4.1",
     "underscore": "^1.8.3"
   }
 }

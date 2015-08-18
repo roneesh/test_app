@@ -1,0 +1,19 @@
+.applications { 
+    list-style-type: none; 
+    padding-left: 0;
+}
+.application {
+    @extend .clearfix;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    .details {
+        float: left;
+        width: 50%;
+    }
+    .actions {
+        float: right;
+        width: 50%;
+    }
+}

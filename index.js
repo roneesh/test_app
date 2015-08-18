@@ -1,6 +1,7 @@
 var express = require('express'),
 	app = express(),
-    server = app.listen(3000, developmentStartup),
+	PORT = 3000,
+    server = app.listen(PORT, developmentStartup),
     bodyParser = require('body-parser'),
     fs = require('fs'),
     _ = require('underscore'),

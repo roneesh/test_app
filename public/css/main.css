@@ -1,298 +1,165 @@
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
-
-html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-}
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/*setup for global includes and all pages*/
-html, body { 
-    height: 100%; 
-    color: #333;
-    min-width: 400px;
-    font-family: 'Comic Sans MS', 'Times New Roman', 'Serif';
-}
-.container, footer {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-.container { 
-    min-height: 100%; 
-    margin-bottom: -54px;
-    box-sizing: border-box;
-    padding-bottom: 15px;
-}
-.container:after { content: ""; display: block; height: 54px;}
-
-/*header and footer*/
-header, footer {
-    width: 100%;
-    background-color: #eee;
-    overflow: auto; /* to avoid collapsing margins */
-}
-header { height: 100px; }
-header h1 { 
-    font-family: 'Comic Sans MS', 'Times New Roman', 'Serif';
-    margin: 5px 0;
-}
-footer { height: 54px; text-align: center; z-index: 2; }
-
-
-
-/* Applications index */
-.applications { list-style-type: none; padding-left: 0;}
-.application {
-    margin: 10px 0;
-    padding: 15px;
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    overflow: auto;
-}
-.application .details {
-    float: left;
-    width: 75%;
-}
-.application .actions {
-    float: right;
-    width: 25%;
-    text-align: right;
-}
-
-
-
-/* New Application*/
-.container.new-application {
-    /*background-image: url('../img/doge_bg.jpg');*/
-    background-size: contain;
-    position: relative;
-    overflow: auto;
-}
-.dogeism {
-    font-family: 'Comic Sans MS', 'Times New Roman', 'Serif';
-    position: absolute;
-    font-size: 5vw;
-}
-.many-credit { 
-    right: 5%;
-    top: 100px;
-    color: red;
-}
-.such-finance { 
-    right: 15%;
-    top: 175px;
-    color: blue;
-}
-.wow-apply { 
-    right: 2%;
-    top: 400px;
-    color: orange;
-}
-.application-form {
-    margin-bottom: 30px;
-}
-.application-form input, .lookup-form input {
-    display: block;
-    padding: 5px;
-    margin: 15px;
-    border-radius: 5px;
-}
-
-
 /* alerts */
 .alert {
-    border: 4px solid;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 0 10px;
-    display: inline-block;
-}
-.success {
+  border: 4px solid;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 5px;
+  display: inline-block; }
+  .alert.success {
     border-color: #00FF6E;
-    background-color: #00FF6E;
-}
-.error {
-    border-color:  #D893B0;
-    background-color: #ECCBD9;
-}
-.notification {
+    background-color: #00FF6E; }
+  .alert.error {
+    border-color: #D893B0;
+    background-color: #ECCBD9; }
+  .alert.notification {
     border-color: #BCE2F4;
-    background-color: #E1EFF6;
-}
+    background-color: #E1EFF6; }
 
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
+.back-btn {
+  float: none;
+  border: 4px solid;
+  border-radius: 5px;
+  width: 250px;
+  text-align: center;
+  padding: 5px;
+  display: block;
+  margin-bottom: 10px; }
 
-@media only screen and (min-width: 35em) {
+.list-button {
+  float: left;
+  margin-right: 15px;
+  border: 2px solid black;
+  line-height: 100px;
+  text-align: center;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px; }
 
-}
+.application-form {
+  margin-bottom: 30px; }
 
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+.application-form input, .lookup-form input {
+  display: block;
+  padding: 5px;
+  margin: 15px;
+  border-radius: 5px; }
 
-}
+.grid-container {
+  padding: 15px 0; }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
+.grid-row {
+  padding: 0 15px;
+  box-sizing: border-box; }
 
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
+.col, .col-1-3, .col-2-3 {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px; }
 
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
+.col-1-3 {
+  width: 33.333333%; }
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
+.col-2-3 {
+  width: 66.666666%; }
 
-.invisible {
-    visibility: hidden;
-}
+.applications {
+  list-style-type: none;
+  padding-left: 0; }
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
+.application {
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #ddd;
+  border: 1px solid #ccc; }
+  .application .details {
+    float: left;
+    width: 50%; }
+  .application .actions {
+    float: right;
+    width: 50%; }
 
-.clearfix:after {
-    clear: both;
-}
+header, footer {
+  width: 100%;
+  background-color: #eee;
+  max-width: 1100px;
+  margin: 0 auto; }
 
-.clearfix {
-    *zoom: 1;
-}
+header h1 {
+  font-family: 'Comic Sans MS', 'Times New Roman', 'Serif';
+  margin: 5px 0; }
 
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
+footer {
+  height: 54px;
+  text-align: center;
+  z-index: 2; }
 
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+nav div {
+  float: left; }
+nav .links {
+  padding-left: 15px; }
+nav a {
+  text-decoration: underline; }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+/*setup for global includes and all pages*/
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+html, body {
+  height: 100%;
+  color: #333;
+  min-width: 400px;
+  min-width: 767px;
+  font-family: 'Comic Sans MS', 'Times New Roman', 'Serif'; }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+a {
+  color: #333;
+  text-decoration: none; }
+  a:visited {
+    color: #333; }
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+img {
+  max-width: 100%;
+  height: auto; }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+.container {
+  max-width: 1100px;
+  margin: 0 auto; }
 
-    thead {
-        display: table-header-group;
-    }
+.container {
+  min-height: 100%;
+  margin-bottom: -54px;
+  box-sizing: border-box;
+  padding-bottom: 15px; }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+.container:after {
+  content: "";
+  display: block;
+  height: 54px; }
 
-    img {
-        max-width: 100% !important;
-    }
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+.clearfix:before, .grid-row:before, .application:before, header:before, footer:before, .container:before,
+.clearfix:after,
+.grid-row:after,
+.application:after,
+header:after,
+footer:after,
+.container:after {
+  content: " ";
+  display: table; }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
+.clearfix:after, .grid-row:after, .application:after, header:after, footer:after, .container:after {
+  clear: both; }
+
+.clearfix, .grid-row, .application, header, footer, .container {
+  *zoom: 1; }
+
+/* New Application*/
+
+/*# sourceMappingURL=main.css.map */

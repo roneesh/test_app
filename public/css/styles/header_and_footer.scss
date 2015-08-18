@@ -1,0 +1,29 @@
+header, footer {
+    width: 100%;
+    background-color: #eee;
+    max-width: 1100px;
+    margin: 0 auto;
+    @extend .clearfix;
+}
+header {
+	h1 {
+	    font-family: 'Comic Sans MS', 'Times New Roman', 'Serif';
+    	margin: 5px 0;	
+	} 
+}
+footer { 
+	height: 54px; 
+	text-align: center; 
+	z-index: 2; 
+}
+nav {
+	div { 
+		float: left;
+	}
+	.links {
+		padding-left: 15px;
+	}
+	a { 
+		text-decoration: underline;
+	}
+}

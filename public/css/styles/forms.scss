@@ -1,0 +1,11 @@
+.application-form {
+    margin-bottom: 30px;
+}
+.application-form, .lookup-form {
+    input {
+    	display: block;
+	    padding: 5px;
+	    margin: 15px;
+	    border-radius: 5px;
+	}
+}

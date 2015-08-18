@@ -17,7 +17,9 @@ html.no-js(lang='')
                         =application.age 
                         |  and is a 
                         =application.profession
-                        |  wants to get a credit card. They can haz?
+                        |  wants to get a credit card. 
+                        if !application.application_reviewed
+                            span They can haz?
                         if application.application_reviewed && application.application_approved
                             br
                             p Currently application is approved!
@@ -29,12 +31,13 @@ html.no-js(lang='')
                             p Currently application has not been reviewed!
                     .actions
                         a(href="/applications/#{application.application_id}/edit?status=approve")
-                            button Approve!
+                            .list-button Approve!
                         a(href="/applications/#{application.application_id}/edit?status=reject")
-                            button Reject...
-                        a(href="/applications/#{application.application_id}") View page
-                        form(action="/applications/#{application.application_id" method="DELETE")
-                            input(type="submit" value="Delete Application")
+                            .list-button Reject...
+                        a(href="/applications/#{application.application_id}") 
+                            .list-button View page
+                        //- form(action="/applications/#{application.application_id" method="DELETE")
+                        //-     input(type="submit" value="Delete Application")
 
 
     include ./partials/footer.jade

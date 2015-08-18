@@ -1,106 +1,50 @@
 [
     {
-        "name": "newId",
-        "age": "99",
-        "profession": "newId",
+        "name": "Roneesh V.",
+        "age": "30",
+        "profession": "Programmer",
         "application_id": "93618396",
         "application_reviewed": true,
-        "application_approved": true
+        "application_approved": false
     },
     {
-        "name": "ron",
-        "age": "99",
-        "profession": "ronning",
+        "name": "Michael G.",
+        "age": "29",
+        "profession": "Police Officer",
         "application_id": "26186962",
         "application_reviewed": true,
         "application_approved": true
     },
     {
-        "name": "ron",
-        "age": "99",
-        "profession": "ronning",
+        "name": "Nellie S.",
+        "age": "45",
+        "profession": "Dog Trainer",
         "application_id": "98551880",
         "application_reviewed": true,
         "application_approved": true
     },
     {
-        "name": "test",
-        "age": "99",
-        "profession": "test",
+        "name": "Nikola T.",
+        "age": "76",
+        "profession": "Inventor",
         "application_id": "70019860",
         "application_reviewed": true,
         "application_approved": true
     },
     {
-        "name": "test",
-        "age": "99",
-        "profession": "testtwo",
-        "application_id": "83884961",
+        "name": "Helen T",
+        "age": "38",
+        "profession": "Jounralist",
+        "application_id": "78420915",
         "application_reviewed": true,
-        "application_approved": true
-    },
-    {
-        "name": "third",
-        "age": "18",
-        "profession": "third",
-        "application_id": "18987197",
-        "application_reviewed": true,
-        "application_approved": true
-    },
-    {
-        "name": "Nikola",
-        "age": "99",
-        "profession": "Engineer",
-        "application_id": "89047718",
-        "application_reviewed": true,
-        "application_approved": true
-    },
-    {
-        "name": "Nikola",
-        "age": "99",
-        "profession": "Engineer",
-        "application_id": "73572212",
-        "application_reviewed": false,
         "application_approved": false
     },
     {
-        "name": "test",
-        "age": "18",
-        "profession": "doctor",
-        "application_id": "54327552",
-        "application_reviewed": false,
-        "application_approved": false
-    },
-    {
-        "name": "nikola",
-        "age": "99",
-        "profession": "inventor",
-        "application_id": "84941237",
+        "name": "Barack Obama",
+        "age": "54",
+        "profession": "President",
+        "application_id": "1302428",
         "application_reviewed": true,
         "application_approved": true
-    },
-    {
-        "name": "doctorBad",
-        "age": "99",
-        "profession": "doctor",
-        "application_id": "61420612",
-        "application_reviewed": true,
-        "application_approved": true
-    },
-    {
-        "name": "refactor",
-        "age": "12",
-        "profession": "refactor",
-        "application_id": "70014702",
-        "application_reviewed": false,
-        "application_approved": false
-    },
-    {
-        "name": "test",
-        "age": "55",
-        "profession": "test",
-        "application_id": "74938191",
-        "application_reviewed": false,
-        "application_approved": false
     }
 ]
