@@ -1,5 +1,3 @@
-// 3 column grid
-
 .grid-container {
 	padding: 15px 0;
 }
@@ -7,13 +5,12 @@
 .grid-row {
 	@extend .clearfix;
 	padding: 0 15px;
-	box-sizing: border-box;
 }
 
+// 3 Column Grid
 .col {
 	float: left;
 	width: 100%;
-	box-sizing: border-box;
 	padding: 0 10px;
 }
 .col-1-3 {
@@ -24,13 +21,3 @@
 	@extend .col;
 	width: 66.666666%;
 }
-
-// @media (max-width: 767px) {
-// 	.col-1-3 {
-// 		width: 100%;
-// 	}
-// 	.col-2-3 {
-// 		width: 100%;
-// 	}
-// }
-

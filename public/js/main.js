@@ -39,11 +39,9 @@ function validateForm(event) {
 		request.done(function(data) {
 			location.replace('/applications/' + data.application_id);
 		})
-		request.fail(function(data) {
+		request.fail(function(jqXHR, error) {
 			/* no-op*/
 		});
 	}
-
-	console.log(elements_failing_validation);
 
 }
