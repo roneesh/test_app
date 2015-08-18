@@ -40,7 +40,11 @@ function indexApplication(request, response) {
 function showApplication(request, response) {
 	var app_id = request.params.id,
 		application = getApplication(app_id);
-	response.render('show', {application: application});
+	if (application) {
+		response.render('show', {application: application});
+	} else {
+		response.render('new', { lookup_message : "We no haz that application! Please try again!"})
+	}
 }
 
 function editApplication(request, response) {

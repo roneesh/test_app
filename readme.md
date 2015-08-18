@@ -32,13 +32,15 @@ The application uses Express.js to serve the app and give it routing.
 
 /applications/:application_id - The place to view a specific applications status
 
-### CSS
+### HTML and CSS
 
 The CSS is organized into SCSS files based on functionality. Generally I organize my CSS along these lines, but I don't follow any hard and fast rules there. The larger and more stylized a project, the greater the CSS will be broken up into files. 
 
 I try to use @extends, especially to bring .clearfix into classes and avoid putting it in the DOM as a className. I also try and use mixins as much as possible. In this simple design I didn't use any mixins but have frequently in the past.
 
 I also aim to just use one class per dom element, with on occasion having two classes per element. This is to keep specificity low and readability high.
+
+Concerning HTML, I try and keep markup clean and use semantic elements such as footer, nav, section, etc when reasonable. 
 
 ### Javascript
 
@@ -58,6 +60,8 @@ I am aware I could use the 'new' syntax to create application objects, however i
 
 As a first line of client side defense I use HTML5's pattern attribute. I try and use commonly accepted regexes for fields like e-mail and phone and names, but in this app I wrote my own (hopefully this demonstrates I can write regex if needed!). There is jQuery validation implemented in main.js, and then the server does some validation in index.js. So in tota the app has 3 measures of validation security in it. 
 
-### HTML
+For the application lookup, it does a simple search to see if it can find an application with that application_id, if so it goes to the show page, if not it bounces back to the application/new page with a message. There is no validation in right now for checking to make sure there aren't two validations with the same application_id. That's because it's a small chance there'll be a double here, and a DB would handle id consistency among records. 
 
-I try and keep markup clean and use semantic elements such as footer, nav, section, etc when reasonable. 
+### Database
+
+The 'database' in this case is just writing to a file. It was really fun to explore node's fs utility! I really enjoyed the learning of that library that this project afforded me. The database supports basic read, write, update of records. Delete has yet to be implemented, it will be a feature I implement with testing.
