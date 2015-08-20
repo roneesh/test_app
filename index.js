@@ -116,7 +116,8 @@ function lookupApplication(request, response) {
 // "Database" of applications via JSON file
 
 function recordIsValid(application) {
-	return (application.name !== undefined) && 
+	return (_.pairs(application).length === 3) && 
+		(application.name !== undefined) && 
 		(application.age !== undefined) &&
 		(application.profession !== undefined) &&
 		/^[a-zA-Z]([a-zA-Z ]+)$/.test(application.name) &&

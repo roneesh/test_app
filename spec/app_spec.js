@@ -42,4 +42,12 @@ describe('recordIsValid', function() {
 		expect(validity).toEqual(false);
 	});
 
+	it('returns false for an object with extra keys', function() {
+		valid_object['new_key'] = 'new_value';
+
+		var validity = index.recordIsValid(valid_object);
+
+		expect(validity).toEqual(false);
+	})
+
 })
