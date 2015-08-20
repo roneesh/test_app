@@ -7,7 +7,8 @@ html.no-js(lang='')
         include ./partials/header.jade
         include ./partials/body_top.jade
         h2 Such Applications, many credit scores, so hip.
-        p= thanks
+        if message
+            .alert= message
         ul.applications
             each application in applications
                 li.application
@@ -36,8 +37,8 @@ html.no-js(lang='')
                             .list-button Reject...
                         a(href="/applications/#{application.application_id}") 
                             .list-button View page
-                        //- form(action="/applications/#{application.application_id" method="DELETE")
-                        //-     input(type="submit" value="Delete Application")
+                        form(action="/applications/#{application.application_id}" method="post")
+                            input(class="list-button" type="submit" value="Delete")
 
 
     include ./partials/footer.jade

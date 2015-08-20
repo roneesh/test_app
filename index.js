@@ -26,6 +26,7 @@ app.get('/applications/:id', showApplication);
 app.get('/applications/:id/edit', editApplication);
 app.post('/applications', createApplication);
 app.post('/applications/lookup', lookupApplication);
+app.post('/applications/:id', deleteApplication);
 
 
 function newApplication(request, response) {
@@ -110,6 +111,16 @@ function lookupApplication(request, response) {
 	}
 }
 
+function deleteApplication(request, response) {
+	var app_id = request.params.id,
+		application = getApplication(app_id);
+
+	if (application) {
+		deleteApplicationRecord(application);
+		response.render('index', { applications: getApplications(), message : ('deleted application_id: ' + app_id + ' so sorry ' + application.name) });
+	}
+}
+
 
 // ****************************************
 // "Database" of applications via JSON file
@@ -162,7 +173,7 @@ function deleteApplicationRecord(removed_record) {
 		return record.application_id !== removed_record.application_id;
 	});
 
-	// fs.writeFileSync(DB_FILE_NAME, JSON.stringify(new_db, null, 4));
+	fs.writeFileSync(DB_FILE_NAME, JSON.stringify(new_db, null, 4));
 	return new_db;
 
 }
