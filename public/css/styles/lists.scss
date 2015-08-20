@@ -17,3 +17,10 @@
         width: 50%;
     }
 }
+
+@media (max-width: 1024px) {
+    .application {
+        .details { width: 35%; }
+        .actions { width: 65%; padding-left: 10px;}
+    }
+}

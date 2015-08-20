@@ -96,6 +96,12 @@ form .list-button {
     float: right;
     width: 50%; }
 
+@media (max-width: 1024px) {
+  .application .details {
+    width: 35%; }
+  .application .actions {
+    width: 65%;
+    padding-left: 10px; } }
 header, footer {
   width: 100%;
   background-color: #eee;
