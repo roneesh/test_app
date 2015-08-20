@@ -160,3 +160,10 @@ function developmentStartup() {
     console.log('Server is running on port ' + server.address().port);
 }
 
+
+// ***********************************
+// Exporting out functions for testing
+
+module.exports = {
+	recordIsValid : recordIsValid
+}
