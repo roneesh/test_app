@@ -29,7 +29,7 @@ app.post('/applications/lookup', lookupApplication);
 
 
 function newApplication(request, response) {
-    response.render('new', { fruits : ['banana', 'grapefruit', 'grapes'] } );
+    response.render('new');
 }
 
 function indexApplication(request, response) {

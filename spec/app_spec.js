@@ -34,12 +34,12 @@ describe('recordIsValid', function() {
 
 	it('returns false for an object missing the age key', function() {
 		var broken_object = {
-				'name' : 'john smith',
-				'profession' : 'programmer'
+				'name' : valid_object.name,
+				'profession' : valid_object.profession
 			},
 			validity = index.recordIsValid(broken_object);
 
 		expect(validity).toEqual(false);
-	})
+	});
 
 })
