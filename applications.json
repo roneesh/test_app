@@ -1,13 +1,5 @@
 [
     {
-        "name": "Nellie S.",
-        "age": "45",
-        "profession": "Dog Trainer",
-        "application_id": "98551880",
-        "application_reviewed": true,
-        "application_approved": true
-    },
-    {
         "name": "Nikola T.",
         "age": "76",
         "profession": "Inventor",

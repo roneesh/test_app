@@ -66,3 +66,7 @@ For the application lookup, it does a simple search to see if it can find an app
 ### Database
 
 The 'database' in this case is just writing to a file. It was really fun to explore node's fs utility! I really enjoyed the learning of that library that this project afforded me. The database supports basic read, write, update of records. Delete has yet to be implemented, it will be a feature I implement with testing.
+
+### Testing
+
+Testing is implemented with Jasmine to do testing on the server side validation function and the newly added delete function via TDD.
