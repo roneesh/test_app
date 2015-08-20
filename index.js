@@ -116,9 +116,12 @@ function lookupApplication(request, response) {
 // "Database" of applications via JSON file
 
 function recordIsValid(application) {
-	return /^[a-zA-Z]([a-zA-Z ]+)$/.test(application.name) &&
-		   /^([1-9][0-9])[0-9]?$/.test(application.age) &&
-		   /^[a-zA-Z][a-zA-Z\s]{2,50}/.test(application.profession);
+	return (application.name !== undefined) && 
+		(application.age !== undefined) &&
+		(application.profession !== undefined) &&
+		/^[a-zA-Z]([a-zA-Z ]+)$/.test(application.name) &&
+		/^([1-9][0-9])[0-9]?$/.test(application.age) &&
+		/^[a-zA-Z][a-zA-Z\s]{2,50}/.test(application.profession);
 }
 
 function readDB() {
