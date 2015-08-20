@@ -5,6 +5,7 @@
 1. Run 'npm install', this will install all the npm packages used on your system
 2. Run 'npm start' to start the app
 3. Change the PORT variable in index.js if you're already using port 3000
+4. Run 'jasmine' on the command line to run the test suite.
 
 ### Code Reviewing This App
 

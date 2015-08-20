@@ -1,4 +1,4 @@
-var index = require('../index.js');
+var index = require('../../index.js');
 
 describe('recordIsValid', function() {
 	var valid_object = {

@@ -155,6 +155,18 @@ function createApplicationRecord(new_record) {
 	return true; //looking for a good way to hook into the response of if the file write is successful
 }
 
+function deleteApplicationRecord(removed_record) {
+	var existing_db = readDB();
+
+	var new_db = _.filter(existing_db, function(record) {
+		return record.application_id !== removed_record.application_id;
+	});
+
+	// fs.writeFileSync(DB_FILE_NAME, JSON.stringify(new_db, null, 4));
+	return new_db;
+
+}
+
 
 // **************************
 // Development server startup
@@ -168,5 +180,6 @@ function developmentStartup() {
 // Exporting out functions for testing
 
 module.exports = {
-	recordIsValid : recordIsValid
+	recordIsValid : recordIsValid,
+	deleteApplicationRecord : deleteApplicationRecord
 }
