@@ -16,9 +16,15 @@ html.no-js(lang='')
                     if apply_message
                         .alert= apply_message
                     form(method='post', action='/applications', class='application-form')
-                        input(type='text', data-validation="alpha" name='name' placeholder='name', required='true', title="first and last name" )
-                        input(type='text', data-validation="numeric" name='age', placeholder='age', required='true', title="age")
-                        input(type='text', data-validation="alpha" name='profession', placeholder='profession', required='true', title="profession" pattern='^[a-zA-Z][a-zA-Z ]{2,50}')
+                        input(type='text', id="name" data-validation="alpha" name='name', placeholder="name", required='true', title="first and last name" )
+                        label(for="name") Letters only plz
+                        
+                        input(type='text', id="age" data-validation="numeric" name='age', placeholder="age", required='true', title="age")
+                        label(for="age") 2 or 3 digits only plz
+                        
+                        input(type='text', id="profession" data-validation="alpha" name='profession', placeholder="profession", required='true', title="profession" pattern='^[a-zA-Z][a-zA-Z ]{2,50}')
+                        label(for="profession") Alphanumeric only plz
+                        
                         input(type='submit' value='such submit, wow!')
 
                     form(class="lookup-form" action="/applications/lookup", method='POST')

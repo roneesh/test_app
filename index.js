@@ -71,7 +71,6 @@ function editApplication(request, response) {
 }
 
 function createApplication(request, response) {
-	console.log('xhr request: ' + request.xhr);
 	var new_application = {
 		'name' 		  : request.body.name,
 		'age'  		  : request.body.age,

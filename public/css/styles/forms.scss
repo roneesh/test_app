@@ -9,3 +9,18 @@
 	    border-radius: 5px;
 	}
 }
+
+.application-form {
+	input { margin: 5px; }
+	label {
+		position: relative;
+		left: 10px;
+		bottom: 3px;
+		color: #bbb;
+		transition: 0.2s all;
+		opacity: 0;
+	}
+	input:focus + label {
+		opacity: 1;
+	}
+}
