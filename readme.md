@@ -71,4 +71,4 @@ The 'database' in this case is just writing to a file. It was really fun to expl
 
 Testing is implemented with Jasmine to do testing on the server side validation function and the newly added delete function via TDD.
 
-The delete testing has one open issue, the test to check if it successfully deletes a record in the datbase has the file write in it, so it deletes a db record each time it is run.
+The delete testing had one open issue, the test to check if it successfully deletes a record in the datbase has the file write in it, so it deleted a db record each time it is run. I ended up refactoring so that in that test, a dummy record is added and then deleted again. 
