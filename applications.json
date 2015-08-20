@@ -1,18 +1,10 @@
 [
     {
-        "name": "Nikola T.",
-        "age": "76",
-        "profession": "Inventor",
-        "application_id": "70019860",
-        "application_reviewed": true,
-        "application_approved": true
-    },
-    {
-        "name": "Helen T",
-        "age": "38",
-        "profession": "Jounralist",
-        "application_id": "78420915",
-        "application_reviewed": true,
-        "application_approved": true
+        "name": "test",
+        "age": "33",
+        "profession": "test",
+        "application_id": "46040363",
+        "application_reviewed": false,
+        "application_approved": false
     }
 ]
