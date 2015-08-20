@@ -45,7 +45,7 @@
 .application-form input, .lookup-form input {
   display: block;
   padding: 5px;
-  margin: 15px;
+  margin: 15px 15px 15px 5px;
   border-radius: 5px; }
 
 .application-form input {
