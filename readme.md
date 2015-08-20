@@ -25,7 +25,7 @@ The application uses HTML5Boilerplate as a skeleton for folder structure, and to
 
 The application uses Express.js to serve the app and give it routing.
 
-### Routes
+### User Facing Routes
 
 /applications/new -- The home route, the place to apply for a card
 
@@ -65,10 +65,10 @@ For the application lookup, it does a simple search to see if it can find an app
 
 ### Database
 
-The 'database' in this case is just writing to a file. It was really fun to explore node's fs utility! I really enjoyed the learning of that library that this project afforded me. The database supports basic read, write, update of records. Delete has yet to be implemented, it will be a feature I implement with testing.
+The 'database' in this case is just writing to a file. It was really fun to explore node's fs utility! I really enjoyed the learning of that library that this project afforded me. The database supports basic read, write, update of records. Delete has yet to be implemented, it will be a feature I implement with testing. EDIT: see below!
 
 ### Testing
 
-Testing is implemented with Jasmine to do testing on the server side validation function and the newly added delete function via TDD.
+Testing is implemented with Jasmine to do testing on the server side validation function and the newly added delete function via TDD. This was also really fun to do, and node makes implementing testing a snap!
 
-The delete testing had one open issue, the test to check if it successfully deletes a record in the datbase has the file write in it, so it deleted a db record each time it is run. I ended up refactoring so that in that test, a dummy record is added and then deleted again. 
+The delete testing had one open issue, the test to check if it successfully deletes a record in the datbase has the file write in it, so it deleted a db record each time it is run. I ended up refactoring so that in that test, a dummy record is added and then we check to see if the function will delete that record.
